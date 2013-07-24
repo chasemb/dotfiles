@@ -1,0 +1,54 @@
+# Personal
+alias rvdv="ssh dev.revitalix.com -p 922"
+alias rvpd="ssh prod.revitalix.com -p 922"
+alias cmbdv="ssh chasemb.no-ip.org -p 922"
+
+# Sublime Text 2
+if [[ $(uname -s) == Darwin ]]; then
+  alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+fi
+
+# VIM
+alias vi="vim"
+
+# LS Colors
+export LS_OPTIONS='--color'
+alias l='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lh'
+alias lll='ls $LS_OPTIONS -alh'
+alias sl='ls $LS_OPTIONS' # often screw this up
+# Enable ls colors
+# Edited - S.M. Changed ls -G -> ls --color. Requires dircolor to be valid.
+if [ "$DISABLE_LS_COLORS" != "true" ]
+then
+   # Find the option for using colors in ls, depending on the version: Linux or BSD
+   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty -h' || alias ls='ls --color -h'
+fi
+
+# Unix
+alias tlf="tail -f"
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+alias ...='../..'
+alias -g G='| grep'
+alias -g M='| less'
+alias -g L='| wc -l'
+alias -g ONE="| awk '{ print \$1}'"
+
+# git
+alias g="git"
+alias gci="git pull --rebase && rake && git push"
+
+# Bundler
+alias b="bundle"
+
+# Tests and Specs
+alias t="ruby -I test"
+alias cuc="bundle exec cucumber"
+
+# Rubygems
+alias gi="gem install"
+alias giv="gem install -v"
+
+# Rails
+alias migrate="rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:prepare"
