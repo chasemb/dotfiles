@@ -10,5 +10,15 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
+# .zshrc build
+fresh-options --file=~/.zshrc --marker
+  fresh shell/zsh/zshrc
+fresh-options
+
+# .zlogin build
+fresh-options --file=~/.zlogin --marker
+  fresh shell/zsh/zlogin
+fresh-options
+
 # oh-my-zsh and my own custom
 fresh robbyrussell/oh-my-zsh . --file=~/.oh-my-zsh/
