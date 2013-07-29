@@ -20,5 +20,14 @@ fresh-options --file=~/.zlogin --marker
   fresh shell/zsh/zlogin
 fresh-options
 
-# oh-my-zsh and my own custom
+# oh-my-zsh
 fresh robbyrussell/oh-my-zsh . --file=~/.oh-my-zsh/
+
+# altercation/solarized
+fresh altercation/solarized . --file=~/.solarized/
+
+# Lokaltog/powerline-fonts
+fresh Lokaltog/powerline-fonts . --file=~/.powerline-fonts/
+
+# lra/mackup
+fresh lra/mackup mackup.py --bin
