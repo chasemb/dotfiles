@@ -33,6 +33,3 @@ fresh altercation/solarized . --file=~/.solarized/
 
 # Lokaltog/powerline-fonts
 fresh Lokaltog/powerline-fonts . --file=~/.powerline-fonts/
-
-# lra/mackup
-fresh chrisblossom/mackup mackup.py --bin
