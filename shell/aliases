@@ -1,29 +1,19 @@
-# Personal
-alias rvdv="ssh dev.revitalix.com -p 922"
-alias rvpd="ssh prod.revitalix.com -p 922"
-alias cmbdv="ssh chasemb.no-ip.org -p 922"
-
-# Sublime Text 2
-if [[ $(uname -s) == Darwin ]]; then
-  alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-fi
-
 # VIM
 alias vi="vim"
 
 # LS Colors
-export LS_OPTIONS='--color'
+#export LS_OPTIONS='--color'
 alias l='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -lh'
 alias lll='ls $LS_OPTIONS -alh'
 alias sl='ls $LS_OPTIONS' # often screw this up
 # Enable ls colors
 # Edited - S.M. Changed ls -G -> ls --color. Requires dircolor to be valid.
-if [ "$DISABLE_LS_COLORS" != "true" ]
-then
-   # Find the option for using colors in ls, depending on the version: Linux or BSD
-   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty -h' || alias ls='ls --color -h'
-fi
+# if [ "$DISABLE_LS_COLORS" != "true" ]
+# then
+#    # Find the option for using colors in ls, depending on the version: Linux or BSD
+#    ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty -h' || alias ls='ls --color -h'
+# fi
 
 # Unix
 alias tlf="tail -f"

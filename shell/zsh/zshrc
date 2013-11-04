@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 [[ -d $(brew --prefix coreutils 2> /dev/null)/libexec/gnubin ]] && export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # LS Colors
-# eval $(dircolors ~/.dircolors)
+eval $(dircolors ~/.dircolors)
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Removes duplicates from $PATH
