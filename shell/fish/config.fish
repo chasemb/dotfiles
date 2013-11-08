@@ -20,9 +20,9 @@ set fish_greeting ""
 set -g theme_display_user yes
 
 #Set Path
-set -x PATH /usr/local/bin /usr/local/sbin $PATH
+set -x fish_user_paths /usr/local/bin /usr/local/sbin $PATH
 
 # OSX Brew coreutils
 if test -d (brew --prefix coreutils ^/dev/null)/libexec/gnubin
-    set -x PATH (brew --prefix coreutils ^/dev/null)/libexec/gnubin $PATH
+    set -x fish_user_paths (brew --prefix coreutils ^/dev/null)/libexec/gnubin $fish_user_paths
 end
