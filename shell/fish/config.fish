@@ -18,3 +18,11 @@ set fish_plugins git brew node autojump sublime
 # Fish options
 set fish_greeting ""
 set -g theme_display_user yes
+
+#Set Path
+set -x PATH /usr/local/bin /usr/local/sbin $PATH
+
+# OSX Brew coreutils
+if test -d (brew --prefix coreutils ^/dev/null)/libexec/gnubin
+    set -x PATH (brew --prefix coreutils ^/dev/null)/libexec/gnubin $PATH
+end
