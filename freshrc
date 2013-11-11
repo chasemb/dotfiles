@@ -2,23 +2,23 @@
 #
 # Examples:
 #
-#   fresh twe4ked/dotfiles shell/functions.sh
-#   fresh jasoncodes/dotfiles aliases/rails.sh
-#   fresh jasoncodes/dotfiles config/tmux.conf --file
+#     fresh twe4ked/dotfiles shell/functions.sh
+#     fresh jasoncodes/dotfiles aliases/rails.sh
+#     fresh jasoncodes/dotfiles config/tmux.conf --file
 #
 # See http://freshshell.com/readme for documentation.
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  git_credential_helper=osxkeychain
+    git_credential_helper=osxkeychain
 else
-  git_credential_helper=cache
+    git_credential_helper=cache
 fi
 
 fresh freshshell/fresh bin/fresh --bin
 
 # Config
 fresh-options --file
-  fresh config/\*
+    fresh config/\*
 fresh-options
 
 # git
@@ -30,12 +30,12 @@ fresh chrisblossom/oh-my-fish . --file=~/.oh-my-fish/
 
 # config.fish
 fresh-options --file=~/.config/fish/config.fish --marker --ignore-missing
-  # fresh
-  # fresh freshshell/fresh contrib/source-build.sh
-  # config
-  fresh shell/fish/config.fish
-  # other
-  #fresh shell/aliases
+    # fresh
+    # fresh freshshell/fresh contrib/source-build.sh
+    # config
+    fresh shell/fish/config.fish
+    # other
+    #fresh shell/aliases
 fresh-options
 
 # altercation/solarized

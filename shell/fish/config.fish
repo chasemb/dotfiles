@@ -23,6 +23,6 @@ set -g theme_display_user yes
 set -x fish_user_paths /usr/local/bin /usr/local/sbin $PATH
 
 # OSX Brew coreutils
-if test -d (brew --prefix coreutils ^/dev/null)/libexec/gnubin
-    set -x fish_user_paths (brew --prefix coreutils ^/dev/null)/libexec/gnubin $fish_user_paths
-end
+# if test -d (brew --prefix coreutils ^/dev/null)/libexec/gnubin
+#     set -x fish_user_paths (brew --prefix coreutils ^/dev/null)/libexec/gnubin $fish_user_paths
+# end
