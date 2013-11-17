@@ -8,12 +8,22 @@
 #
 # See http://freshshell.com/readme for documentation.
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    git_credential_helper=osxkeychain
+else
+    git_credential_helper=cache
+fi
+
 fresh freshshell/fresh bin/fresh --bin
 
 # Config
 fresh-options --file
   fresh config/\*
 fresh-options
+
+# git
+fresh git/gitconfig --file --filter="sed 's+git_credential_helper+${git_credential_helper}+g'"
+fresh git/gitignore --file
 
 # prezto
 fresh sorin-ionescu/prezto . --file=~/.zprezto/
