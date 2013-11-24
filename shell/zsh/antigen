@@ -32,7 +32,7 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 
 # Load the theme.
-antigen theme
+antigen theme digitalformula/zsh.prompts
 
 # Tell antigen that you're done.
 antigen apply

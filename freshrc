@@ -38,7 +38,7 @@ fresh zsh-users/antigen antigen.zsh --file=~/.antigen/antigen.zsh
 # zshrc
 fresh-options --file=~/.zshrc --marker --ignore-missing
     # Antigen
-    fresh chrisblossom/dotfiles shell/zsh/antigen
+    fresh shell/zsh/antigen
     # prezto
     # fresh sorin-ionescu/prezto runcoms/zshrc
     # fresh
@@ -87,7 +87,7 @@ fresh altercation/solarized . --file=~/.solarized/
 fresh Lokaltog/powerline-fonts . --file=~/.powerline-fonts/
 
 
-fresh_after_build() {
+# fresh_after_build() {
   # Git submodules
   # if [ -z "${updated_submodules+1}" ]; then
   #   cd ~/.fresh/source/sorin-ionescu/prezto/ && git pull && git submodule update --init --recursive
@@ -98,4 +98,4 @@ fresh_after_build() {
   #   ~/.fresh/build/bin/fresh
   # fi
   # unset updated_submodules
-}
+# }
