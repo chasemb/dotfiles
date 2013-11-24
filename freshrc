@@ -14,62 +14,68 @@ else
     git_credential_helper=cache
 fi
 
-fresh freshshell/fresh bin/fresh --bin
+#fresh freshshell/fresh bin/fresh --bin
+fresh freshshell/fresh bin/fresh --bin=~/.bin/fresh
 
 # Config
 fresh-options --file
-  fresh config/\*
+    fresh config/\*
 fresh-options
 
 # git
 fresh git/gitconfig --file --filter="sed 's+git_credential_helper+${git_credential_helper}+g'"
 fresh git/gitignore --file
 
-# prezto
-fresh sorin-ionescu/prezto . --file=~/.zprezto/
+# Antigen (zsh plugin manager)
+fresh zsh-users/antigen antigen.zsh --file=~/.antigen/antigen.zsh
 
-# zpreztorc
-fresh shell/zsh/zpreztorc --file=~/.zpreztorc
+# # prezto
+# fresh sorin-ionescu/prezto . --file=~/.zprezto/
+
+# # zpreztorc
+# fresh shell/zsh/zpreztorc --file=~/.zpreztorc
 
 # zshrc
 fresh-options --file=~/.zshrc --marker --ignore-missing
-  # prezto
-  fresh sorin-ionescu/prezto runcoms/zshrc
-  # fresh
-  fresh freshshell/fresh contrib/source-build.sh
-  # other
-  fresh shell/aliases
-  fresh shell/zsh/zshrc
+    # Antigen
+    fresh chrisblossom/dotfiles shell/zsh/antigen
+    # prezto
+    # fresh sorin-ionescu/prezto runcoms/zshrc
+    # fresh
+    fresh freshshell/fresh contrib/source-build.sh
+    # other
+    fresh shell/aliases
+    fresh shell/zsh/zshrc
 fresh-options
 
-# zlogin
-fresh-options --file=~/.zlogin --marker --ignore-missing
-  # prezto
-  fresh sorin-ionescu/prezto runcoms/zlogin
-  # other
-  fresh shell/zsh/zlogin
-fresh-options
+# # zlogin
+# fresh-options --file=~/.zlogin --marker --ignore-missing
+#   # prezto
+#   fresh sorin-ionescu/prezto runcoms/zlogin
+#   # other
+#   fresh shell/zsh/zlogin
+# fresh-options
 
-# zlogout
-fresh-options --file=~/.zlogout --marker --ignore-missing
-  # prezto
-  fresh sorin-ionescu/prezto runcoms/zlogout
-  # other
-fresh-options
+# # zlogout
+# fresh-options --file=~/.zlogout --marker --ignore-missing
+#   # prezto
+#   fresh sorin-ionescu/prezto runcoms/zlogout
+#   # other
+# fresh-options
 
-# zprofile
-fresh-options --file=~/.zprofile --marker --ignore-missing
-  # prezto
-  fresh sorin-ionescu/prezto runcoms/zprofile
-  # other
-fresh-options
+# # zprofile
+# fresh-options --file=~/.zprofile --marker --ignore-missing
+#   # prezto
+#   fresh sorin-ionescu/prezto runcoms/zprofile
+#   # other
+# fresh-options
 
-# zshenv
-fresh-options --file=~/.zshenv --marker --ignore-missing
-  # prezto
-  fresh sorin-ionescu/prezto runcoms/zshenv
-  # other
-fresh-options
+# # zshenv
+# fresh-options --file=~/.zshenv --marker --ignore-missing
+#   # prezto
+#   fresh sorin-ionescu/prezto runcoms/zshenv
+#   # other
+# fresh-options
 
 # # zsh-autosuggestions
 # fresh tarruda/zsh-autosuggestions . --file=~/.zsh-autosuggestions/
@@ -83,13 +89,13 @@ fresh Lokaltog/powerline-fonts . --file=~/.powerline-fonts/
 
 fresh_after_build() {
   # Git submodules
-  if [ -z "${updated_submodules+1}" ]; then
-    cd ~/.fresh/source/sorin-ionescu/prezto/ && git pull && git submodule update --init --recursive
-    export updated_submodules=0
-  fi
-  if [ "$updated_submodules" -eq 0 ]; then
-    export updated_submodules=$[updated_submodules+1]
-    ~/bin/fresh
-  fi
-  unset updated_submodules
+  # if [ -z "${updated_submodules+1}" ]; then
+  #   cd ~/.fresh/source/sorin-ionescu/prezto/ && git pull && git submodule update --init --recursive
+  #   export updated_submodules=0
+  # fi
+  # if [ "$updated_submodules" -eq 0 ]; then
+  #   export updated_submodules=$[updated_submodules+1]
+  #   ~/.fresh/build/bin/fresh
+  # fi
+  # unset updated_submodules
 }

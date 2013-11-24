@@ -1,5 +1,5 @@
 # Customize to your needs...
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.bin:$PATH"
 
 # OSX Brew coreutils
 [[ -d $(brew --prefix coreutils 2> /dev/null)/libexec/gnubin ]] && export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"

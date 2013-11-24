@@ -1,3 +1,6 @@
+# Fresh
+alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
+
 # VIM
 alias vi="vim"
 
@@ -9,11 +12,11 @@ alias lll='ls $LS_OPTIONS -alh'
 alias sl='ls $LS_OPTIONS' # often screw this up
 # Enable ls colors
 # Edited - S.M. Changed ls -G -> ls --color. Requires dircolor to be valid.
-# if [ "$DISABLE_LS_COLORS" != "true" ]
-# then
-#    # Find the option for using colors in ls, depending on the version: Linux or BSD
-#    ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty -h' || alias ls='ls --color -h'
-# fi
+if [ "$DISABLE_LS_COLORS" != "true" ]
+then
+   # Find the option for using colors in ls, depending on the version: Linux or BSD
+   ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty -h' || alias ls='ls --color -h'
+fi
 
 # Unix
 alias tlf="tail -f"
