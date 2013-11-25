@@ -1,38 +1,40 @@
 source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
-antigen use prezto
+antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 
-#
-# # Bundles from the default repo (robbyrussell's oh-my-zsh).
-# command-not-found
-# coffee
-# extract
-# git
-# github
-# git-extras
-# git-flow
-# git-remote-branch
-# heroku
-# node
-# npm
-# urltools
-# ssh-agent
-# taskwarrior
-# vi-mode
+    #
+    # # Bundles from the default repo (robbyrussell's oh-my-zsh).
+    command-not-found
+    colorize
+    extract
+    git
+    github
+    git-extras
+    git-flow
+    git-remote-branch
+    node
+    # npm
+    urltools
+    # ssh-agent
+    osx
+    brew
+    vagrant
+    sublime
 
-#
-# # Syntax highlighting bundle.
-# zsh-users/zsh-syntax-highlighting
-# zsh-users/zsh-completions
-# zsh-users/zaw
+    #
+    # # Syntax highlighting bundle.
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-completions
+    # zsh-users/zaw
+    # tarruda/zsh-autosuggestions
 
 EOBUNDLES
 
 # Load the theme.
-antigen theme digitalformula/zsh.prompts
+antigen theme agnoster
 
 # Tell antigen that you're done.
 antigen apply
