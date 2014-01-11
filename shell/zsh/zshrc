@@ -4,6 +4,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.bin:$PATH"
 # OSX Brew coreutils
 [[ -d $(brew --prefix coreutils 2> /dev/null)/libexec/gnubin ]] && export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
+# OSX Vagrant VMWare Fusion Provider
+[[ -d /Applications/VMware\ Fusion.app ]] && export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
 # LS Colors
 eval $(dircolors ~/.dircolors)
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
