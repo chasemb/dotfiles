@@ -16,7 +16,7 @@ antigen bundles <<EOBUNDLES
     git-flow
     git-remote-branch
     node
-    # npm
+    npm
     urltools
     # ssh-agent
     osx
